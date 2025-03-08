@@ -40,7 +40,7 @@ body {
 		background-color: #FB6F92;
 	}
 }
-@-moz-keyframes peach_alive {
+@-moz-keyframes pink_alive {
 	0%{
 		background-color: #FB6F92;
 	}
@@ -58,7 +58,7 @@ body {
 	}
 }
 
-@-o-keyframes peach_alive {
+@-o-keyframes pink_alive {
 	0%{
 		background-color: #FB6F92;
 	}
@@ -76,7 +76,7 @@ body {
 	}
 }
 
-@-ms-keyframes peach_alive {
+@-ms-keyframes pink_alive {
 	0%{
 		background-color: #FB6F92;
 	}
@@ -94,7 +94,7 @@ body {
 	}
 }
 
-@keyframes peach_alive {
+@keyframes pink_alive {
 	0%{
 		background-color: #FB6F92;
 	}
@@ -1257,8 +1257,8 @@ audio {
 
 .balloon-border{
 	position: fixed;
-	top:100%;
-	opacity: 0.5;
+	top:50%;
+	opacity: 0.8;
 	z-index: 9999;
 }
 .control-panel {
