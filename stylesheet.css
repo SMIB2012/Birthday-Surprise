@@ -178,6 +178,18 @@ audio {
     }
 }
 
+/*Art Styling*/
+.Art {
+    max-width: 100%;
+    z-index: 9999;
+    transform: translate(0px, -500px);
+}
+
+.Art-come {
+    animation: Art_come linear 6s;
+    transform: translate(0px, 0px);
+}
+
 /* Balloons Styling */
 .balloons {
     position: fixed;
@@ -279,7 +291,7 @@ audio {
     padding: 10px 0;
 }
 
-#play, #bannar_coming, #balloons_flying, #cake_fadein, #light_candle, #wish_message, #story {
+#play, #bannar_coming, #Art_coming, #balloons_flying, #cake_fadein, #light_candle, #wish_message, #story {
     display: none;
 }
 
