@@ -1,19 +1,8 @@
-:root {
-    --primary-color: #c63662;
-    --background-pink: #FF8FAB;
-    --text-color: #C4515C;
-    --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
-    --bulb-size: 50px;
-    --balloon-size: 100px;
-}
-
 /* General Body Styling */
 body {
     background-color: #000;
     transition: background-color linear 5s;
     overflow-x: hidden;
-    font-family: 'Signika', sans-serif;
-    color: var(--text-color);
 }
 
 .container {
@@ -21,25 +10,36 @@ body {
 }
 
 .pink {
-    background-color: var(--background-pink);
+    background-color: #FF8FAB;
 }
 
 .pink-after {
     animation: pink_alive linear 8s infinite;
 }
 
+/* Animation for Background Color Change */
 @keyframes pink_alive {
-    0% { background-color: #FB6F92; }
-    25% { background-color: #FF8FAB; }
-    50% { background-color: #FB6F92; }
-    75% { background-color: #FF8FAB; }
-    100% { background-color: #FB6F92; }
+    0% {
+        background-color: #FB6F92;
+    }
+    25% {
+        background-color: #FF8FAB;
+    }
+    50% {
+        background-color: #FB6F92;
+    }
+    75% {
+        background-color: #FF8FAB;
+    }
+    100% {
+        background-color: #FB6F92;
+    }
 }
 
 /* Bulb Styling */
 .bulb {
-    width: var(--bulb-size);
-    height: var(--bulb-size);
+    width: 50px;
+    height: 50px;
     margin: auto;
     z-index: 99;
     background-repeat: no-repeat;
@@ -52,30 +52,102 @@ body {
     z-index: 99;
 }
 
-.bulb-glow-yellow { background-image: url('bulb_yellow.png'); }
-.bulb-glow-red { background-image: url('bulb_red.png'); }
-.bulb-glow-blue { background-image: url('bulb_blue.png'); }
-.bulb-glow-green { background-image: url('bulb_green.png'); }
-.bulb-glow-pink { background-image: url('bulb_pink.png'); }
-.bulb-glow-orange { background-image: url('bulb_orange.png'); }
-
-@keyframes bulb_glow {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 1; }
+/* Refactored Bulb Glow Animations */
+.bulb-glow-yellow {
+    background-image: url('bulb_yellow.png');
+    animation: bulb_glow linear 5s;
 }
 
-/* After Music Bulb Glow */
-.bulb-glow-yellow-after { animation: bulb_glow_after 1s infinite; }
-.bulb-glow-red-after { animation: bulb_glow_after 1.2s infinite; }
-.bulb-glow-blue-after { animation: bulb_glow_after 1.4s infinite; }
-.bulb-glow-green-after { animation: bulb_glow_after 1.8s infinite; }
-.bulb-glow-pink-after { animation: bulb_glow_after 2s infinite; }
-.bulb-glow-orange-after { animation: bulb_glow_after 2.2s infinite; }
+.bulb-glow-red {
+    background-image: url('bulb_red.png');
+    animation: bulb_glow linear 5s;
+}
 
+.bulb-glow-blue {
+    background-image: url('bulb_blue.png');
+    animation: bulb_glow linear 5s;
+}
+
+.bulb-glow-green {
+    background-image: url('bulb_green.png');
+    animation: bulb_glow linear 5s;
+}
+
+.bulb-glow-pink {
+    background-image: url('bulb_pink.png');
+    animation: bulb_glow linear 5s;
+}
+
+.bulb-glow-orange {
+    background-image: url('bulb_orange.png');
+    animation: bulb_glow linear 5s;
+}
+
+/* Unified Keyframe for Bulb Glow */
+@keyframes bulb_glow {
+    0% {
+        background-image: url('bulb.png');
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        background-image: url('bulb_yellow.png');
+        opacity: 1;
+    }
+}
+
+/* After Music Bulb Glow Animations */
+.bulb-glow-yellow-after {
+    --bulb-color: url('bulb_yellow.png');
+    background-image: var(--bulb-color);
+    animation: bulb_glow_after linear 1s infinite;
+}
+
+.bulb-glow-red-after {
+    --bulb-color: url('bulb_red.png');
+    background-image: var(--bulb-color);
+    animation: bulb_glow_after linear 1.2s infinite;
+}
+
+.bulb-glow-blue-after {
+    --bulb-color: url('bulb_blue.png');
+    background-image: var(--bulb-color);
+    animation: bulb_glow_after linear 1.4s infinite;
+}
+
+.bulb-glow-green-after {
+    --bulb-color: url('bulb_green.png');
+    background-image: var(--bulb-color);
+    animation: bulb_glow_after linear 1.8s infinite;
+}
+
+.bulb-glow-pink-after {
+    --bulb-color: url('bulb_pink.png');
+    background-image: var(--bulb-color);
+    animation: bulb_glow_after linear 2s infinite;
+}
+
+.bulb-glow-orange-after {
+    --bulb-color: url('bulb_orange.png');
+    background-image: var(--bulb-color);
+    animation: bulb_glow_after linear 2.2s infinite;
+}
+
+/* Unified Keyframe for After Music Bulb Glow */
 @keyframes bulb_glow_after {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+    0%, 100% {
+        background-image: url('bulb.png');
+    }
+    50% {
+        background-image: var(--bulb-color);
+    }
+}
+
+/* Audio Element */
+audio {
+    display: none;
 }
 
 /* Banner Styling */
@@ -90,11 +162,20 @@ body {
     transform: translate(0px, 0px);
 }
 
+/* Unified Keyframe for Banner Animation */
 @keyframes bannar_come {
-    0% { transform: translate(0px, -1000px); }
-    33% { transform: translate(0px, 0px) rotate(10deg); }
-    66% { transform: translate(0px, 100px) rotate(-10deg); }
-    100% { transform: translate(0px, 0px); }
+    0% {
+        transform: translate(0px, -1000px);
+    }
+    33% {
+        transform: translate(0px, 0px) rotate(10deg);
+    }
+    66% {
+        transform: translate(0px, 100px) rotate(-10deg);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
 }
 
 /* Balloons Styling */
@@ -103,18 +184,55 @@ body {
     bottom: -200px;
     opacity: 0.8;
     z-index: 999;
-    width: var(--balloon-size);
-    height: calc(var(--balloon-size) * 1.83);
+    width: 100px;
+    height: 183px;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .balloons h2 {
     text-transform: uppercase;
+    font-family: 'Signika', Arial, Helvetica, sans-serif;
     font-size: 50px;
     color: #BF4136;
     text-shadow: 5px 5px 5px #FFF;
     display: none;
+}
+
+#b1, #b11 {
+    background-image: url('b1.png');
+}
+
+#b2, #b22 {
+    background-image: url('b2.png');
+}
+
+#b3, #b33 {
+    background-image: url('b3.png');
+}
+
+#b4, #b44 {
+    background-image: url('b4.png');
+}
+
+#b5, #b55 {
+    background-image: url('b5.png');
+}
+
+#b6, #b66 {
+    background-image: url('b6.png');
+}
+
+#b7, #b77 {
+    background-image: url('b7.png');
+}
+
+#b8, #b88 {
+    background-image: url('b8.png');
+}
+
+#b9, #b99 {
+    background-image: url('b9.png');
 }
 
 /* Balloon Rotation Animations */
@@ -129,57 +247,85 @@ body {
 }
 
 @keyframes balloons_rotate_one {
-    0%, 100% { transform: rotate(30deg); }
-    50% { transform: rotate(-30deg); }
+    0%, 100% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
 }
 
 @keyframes balloons_rotate_two {
-    0%, 100% { transform: rotate(-20deg); }
-    50% { transform: rotate(20deg); }
+    0%, 100% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
 }
 
-/* Message Styling */
+/* Balloon Border */
+.balloon-border {
+    position: fixed;
+    top: 100%;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+/* Control Panel */
+.control-panel {
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0;
+}
+
+#play, #bannar_coming, #balloons_flying, #cake_fadein, #light_candle, #wish_message, #story {
+    display: none;
+}
+
+.cake-cover {
+    margin-top: 50px;
+}
+
 .message {
     margin-top: 200px;
     display: none;
 }
 
 .message p {
+    font-family: 'Signika', Arial, Helvetica, sans-serif;
     font-size: 30px;
     text-transform: uppercase;
-    color: var(--text-color);
+    color: #C4515C;
     text-shadow: 2px 2px 2px #FFF;
     font-weight: bold;
-    text-align: center;
-    margin: 20px 0;
 }
 
 /* Button Styling */
 .btn-primary {
-    border-color: var(--primary-color);
+    border-color: #c63662;
     padding: 10px;
     text-transform: uppercase;
+    font-family: 'Signika', Arial, Helvetica, sans-serif;
     font-weight: 700;
     color: #fff;
-    background-color: var(--primary-color);
-    transition: background-color 0.3s;
+    background-color: #c63662;
 }
 
-.btn-primary:hover {
-    background-color: #b33158;
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    border-color: #fff;
+    color: #fff;
+    background-color: #b33158; /* Darker shade for hover */
 }
 
-/* Responsive Design */
-@media (max-width: 720px) {
+/* Media Query for Responsiveness */
+@media only screen and (max-width: 720px) {
     .container {
         transform: scale(0.9);
     }
-
-    .balloons h2 {
-        font-size: 30px;
-    }
-
-    .message p {
-        font-size: 20px;
-    }
 }
+
