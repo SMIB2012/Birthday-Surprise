@@ -186,37 +186,38 @@ $('document').ready(function(){
 		});
 	});
 	
-	$('#story').click(function(){
-		$(this).fadeOut('slow');
-		$('.cake').fadeOut('fast').promise().done(function(){
-			$('.message').fadeIn('slow');
-		});
-		
-		var i;
-
-		function msgLoop (i) {
-			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
-			i=i+1;
-			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
-			if(i==50){
-				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
-					$('.cake').fadeIn('fast');
-				});
-				
-			}
-			else{
-				msgLoop(i);
-			}			
-
-		});
-			// body...
-		}
-		
-		msgLoop(0);
-		
-	});
+	$('#story').click(function () {
+    $(this).fadeOut('slow'); // Fade out the #story element
+    $('.cake').fadeOut('fast').promise().done(function () {
+        $('.message').fadeIn('slow', function () {
+            // Start the message loop after .message is fully visible
+            msgLoop(1); // Start with the first paragraph (index 1)
+        });
+    });
 });
 
+function msgLoop(i) {
+    var totalParagraphs = $('.message p').length; // Get total number of paragraphs
+
+    // Fade out the current paragraph
+    $("p:nth-child(" + i + ")").fadeOut('slow', function () {
+        // After fading out, move to the next paragraph
+        i = i + 1;
+
+        if (i <= totalParagraphs) {
+            // Fade in the next paragraph
+            $("p:nth-child(" + i + ")").fadeIn('slow', function () {
+                // Wait for 1 second, then fade out the next paragraph
+                $(this).delay(1000).promise().done(function () {
+                    msgLoop(i); // Recursively call msgLoop for the next paragraph
+                });
+            });
+        } else {
+            // If all paragraphs are done, fade in the cake
+            $('.cake').fadeIn('fast');
+        }
+    });
+}
 
 
 
