@@ -154,13 +154,12 @@ audio {
 .bannar {
     max-width: 300%;
     z-index: 9999;
-    scale: (2);
-    transform: translate(0px, -500px);
+    transform: scale(2) translate(0px, -500px);
 }
 
 .bannar-come {
     animation: bannar_come linear 6s;
-    transform: translate(0px, 0px);
+    transform: scale(2) translate(0px, 0px);
 }
 
 /* Unified Keyframe for Banner Animation */
