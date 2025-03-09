@@ -152,8 +152,9 @@ audio {
 
 /* Banner Styling */
 .bannar {
-    max-width: 100%;
+    max-width: 300%;
     z-index: 9999;
+    scale: (2);
     transform: translate(0px, -500px);
 }
 
