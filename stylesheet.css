@@ -258,8 +258,8 @@ audio {
 /* Balloon Border */
 .balloon-border {
     position: fixed;
-    top: 50%;
-    opacity: 0.8;
+    top: 100%;
+    opacity: 1.0;
     z-index: 9999;
 }
 
@@ -294,13 +294,13 @@ audio {
 
 /* Button Styling */
 .btn-primary {
-    border-color: #466baf;
+    border-color: #c63662;
     padding: 10px;
     text-transform: uppercase;
     font-family: 'Signika', Arial, Helvetica, sans-serif;
     font-weight: 700;
     color: #fff;
-    background-color: #466baf;
+    background-color: #c63662;
 }
 
 .btn-primary:hover,
@@ -310,7 +310,7 @@ audio {
 .open .dropdown-toggle.btn-primary {
     border-color: #fff;
     color: #fff;
-    background-color: #33528f; /* Darker shade for hover */
+    background-color: #b33158; /* Darker shade for hover */
 }
 
 /* Media Query for Responsiveness */
