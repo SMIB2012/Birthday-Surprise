@@ -133,7 +133,7 @@ body {
         background-image: url('bulb.png');
     }
     50% {
-        background-image: url('bulb_yellow.png');
+        background-image: url('bulb_pink.png');
     }
 }
 
@@ -260,7 +260,7 @@ audio {
     position: fixed;
     top: 100%;
     opacity: 0.6;
-    z-index: 99;
+    z-index: 1;
 }
 
 /* Control Panel */
