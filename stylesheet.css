@@ -19,20 +19,11 @@ body {
 
 /* Animation for Background Color Change */
 @keyframes pink_alive {
-    0% {
+    0%, 100% {
         background-color: #FB6F92;
-    }
-    25% {
-        background-color: #FF8FAB;
     }
     50% {
-        background-color: #FB6F92;
-    }
-    75% {
         background-color: #FF8FAB;
-    }
-    100% {
-        background-color: #FB6F92;
     }
 }
 
@@ -328,4 +319,3 @@ audio {
         transform: scale(0.9);
     }
 }
-
