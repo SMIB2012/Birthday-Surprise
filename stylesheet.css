@@ -98,32 +98,38 @@ body {
 
 /* After Music Bulb Glow Animations */
 .bulb-glow-yellow-after {
-    background-image: url('bulb_yellow.png');
+    --bulb-color: url('bulb_yellow.png');
+    background-image: var(--bulb-color);
     animation: bulb_glow_after linear 1s infinite;
 }
 
 .bulb-glow-red-after {
-    background-image: url('bulb_red.png');
+    --bulb-color: url('bulb_red.png');
+    background-image: var(--bulb-color);
     animation: bulb_glow_after linear 1.2s infinite;
 }
 
 .bulb-glow-blue-after {
-    background-image: url('bulb_blue.png');
+    --bulb-color: url('bulb_blue.png');
+    background-image: var(--bulb-color);
     animation: bulb_glow_after linear 1.4s infinite;
 }
 
 .bulb-glow-green-after {
-    background-image: url('bulb_green.png');
+    --bulb-color: url('bulb_green.png');
+    background-image: var(--bulb-color);
     animation: bulb_glow_after linear 1.8s infinite;
 }
 
 .bulb-glow-pink-after {
-    background-image: url('bulb_pink.png');
+    --bulb-color: url('bulb_pink.png');
+    background-image: var(--bulb-color);
     animation: bulb_glow_after linear 2s infinite;
 }
 
 .bulb-glow-orange-after {
-    background-image: url('bulb_orange.png');
+    --bulb-color: url('bulb_orange.png');
+    background-image: var(--bulb-color);
     animation: bulb_glow_after linear 2.2s infinite;
 }
 
@@ -133,7 +139,7 @@ body {
         background-image: url('bulb.png');
     }
     50% {
-        background-image: url('bulb_pink.png');
+        background-image: var(--bulb-color);
     }
 }
 
