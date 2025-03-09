@@ -93,7 +93,7 @@ body {
         opacity: 1;
     }
     100% {
-        background-image: url('bulb_yellow.png');
+        background-image: url('bulb_pink.png');
         opacity: 1;
     }
 }
@@ -153,7 +153,7 @@ audio {
 /* Banner Styling */
 .bannar {
     max-width: 100%;
-    z-index: 999;
+    z-index: 9999;
     transform: translate(0px, -500px);
 }
 
