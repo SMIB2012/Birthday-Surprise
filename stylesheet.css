@@ -49,7 +49,7 @@ body {
 
 .bulb-holder {
     height: 70px;
-    z-index: 99;
+    z-index: 999;
 }
 
 /* Refactored Bulb Glow Animations */
