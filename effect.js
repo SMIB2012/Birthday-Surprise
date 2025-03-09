@@ -1,223 +1,143 @@
-$(window).load(function(){
-	$('.loading').fadeOut('fast');
-	$('.container').fadeIn('fast');
-});
-$('document').ready(function(){
-		var vw;
-		$(window).resize(function(){
-			 vw = $(window).width()/2;
-			$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').stop();
-			$('#b11').animate({top:240, left: vw-350},500);
-			$('#b22').animate({top:240, left: vw-250},500);
-			$('#b33').animate({top:240, left: vw-150},500);
-			$('#b44').animate({top:240, left: vw-50},500);
-			$('#b55').animate({top:240, left: vw+50},500);
-			$('#b66').animate({top:240, left: vw+150},500);
-			$('#b77').animate({top:240, left: vw+250},500);
-			$('#b88').animate({top:240, left: vw+350},500);
-			$('#b99').animate({top:240, left: vw+450},500);
-		});
-
-	$('#turn_on').click(function(){
-		$('#bulb_yellow').addClass('bulb-glow-yellow');
-		$('#bulb_red').addClass('bulb-glow-red');
-		$('#bulb_blue').addClass('bulb-glow-blue');
-		$('#bulb_green').addClass('bulb-glow-green');
-		$('#bulb_pink').addClass('bulb-glow-pink');
-		$('#bulb_orange').addClass('bulb-glow-orange');
-		$('body').addClass('pink');
-		$(this).fadeOut('slow').delay(5000).promise().done(function(){
-			$('#play').fadeIn('slow');
-		});
-	});
-	$('#play').click(function(){
-		var audio = $('.song')[0];
-        audio.play();
-        $('#bulb_yellow').addClass('bulb-glow-yellow-after');
-		$('#bulb_red').addClass('bulb-glow-red-after');
-		$('#bulb_blue').addClass('bulb-glow-blue-after');
-		$('#bulb_green').addClass('bulb-glow-green-after');
-		$('#bulb_pink').addClass('bulb-glow-pink-after');
-		$('#bulb_orange').addClass('bulb-glow-orange-after');
-		$('body').css('backgroud-color','#FFF');
-		$('body').addClass('pink-after');
-		$(this).fadeOut('slow').delay(6000).promise().done(function(){
-			$('#bannar_coming').fadeIn('slow');
-		});
-	});
-
-	$('#bannar_coming').click(function(){
-		$('.bannar').addClass('bannar-come');
-		$(this).fadeOut('slow').delay(6000).promise().done(function(){
-			$('#balloons_flying').fadeIn('slow');
-		});
-	});
-
-	function loopOne() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b1').animate({left:randleft,bottom:randtop},10000,function(){
-			loopOne();
-		});
-	}
-	function loopTwo() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b2').animate({left:randleft,bottom:randtop},10000,function(){
-			loopTwo();
-		});
-	}
-	function loopThree() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b3').animate({left:randleft,bottom:randtop},10000,function(){
-			loopThree();
-		});
-	}
-	function loopFour() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b4').animate({left:randleft,bottom:randtop},10000,function(){
-			loopFour();
-		});
-	}
-	function loopFive() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b5').animate({left:randleft,bottom:randtop},10000,function(){
-			loopFive();
-		});
-	}
-
-	function loopSix() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b6').animate({left:randleft,bottom:randtop},10000,function(){
-			loopSix();
-		});
-	}
-	function loopSeven() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b7').animate({left:randleft,bottom:randtop},10000,function(){
-			loopSeven();
-		});
-	}
-	function loopEight() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b8').animate({left:randleft,bottom:randtop},10000,function(){
-			loopEight();
-		});
-	}
-	function loopNine() {
-		var randleft = 1000*Math.random();
-		var randtop = 500*Math.random();
-		$('#b9').animate({left:randleft,bottom:randtop},10000,function(){
-			loopNine();
-		});
-	}
-
-	$('#balloons_flying').click(function(){
-		$('.balloon-border').animate({top:-250},8000);
-		$('#b1,#b4,#b5,#b7,#b9').addClass('balloons-rotate-behaviour-one');
-		$('#b2,#b3,#b6,#b8').addClass('balloons-rotate-behaviour-two');
-		// $('#b3').addClass('balloons-rotate-behaviour-two');
-		// $('#b4').addClass('balloons-rotate-behaviour-one');
-		// $('#b5').addClass('balloons-rotate-behaviour-one');
-		// $('#b6').addClass('balloons-rotate-behaviour-two');
-		// $('#b7').addClass('balloons-rotate-behaviour-one');
-		loopOne();
-		loopTwo();
-		loopThree();
-		loopFour();
-		loopFive();
-		loopSix();
-		loopSeven();
-		loopEight();
-		loopNine();
-		
-		$(this).fadeOut('slow').delay(5000).promise().done(function(){
-			$('#cake_fadein').fadeIn('slow');
-		});
-	});	
-
-	$('#cake_fadein').click(function(){
-		$('.cake').fadeIn('slow');
-		$(this).fadeOut('slow').delay(3000).promise().done(function(){
-			$('#light_candle').fadeIn('slow');
-		});
-	});
-
-	$('#light_candle').click(function(){
-		$('.fuego').fadeIn('slow');
-		$(this).fadeOut('slow').promise().done(function(){
-			$('#wish_message').fadeIn('slow');
-		});
-	});
-
-		
-	$('#wish_message').click(function(){
-		 vw = $(window).width()/2;
-
-		$('#b1,#b2,#b3,#b4,#b5,#b6,#b7,#b8,#b9').stop();
-		$('#b1').attr('id','b11');
-		$('#b2').attr('id','b22')
-		$('#b3').attr('id','b33')
-		$('#b4').attr('id','b44')
-		$('#b5').attr('id','b55')
-		$('#b6').attr('id','b66')
-		$('#b7').attr('id','b77')
-		$('#b8').attr('id','b88')
-		$('#b9').attr('id','b99')
-		$('#b11').animate({top:240, left: vw-350},500);
-		$('#b22').animate({top:240, left: vw-250},500);
-		$('#b33').animate({top:240, left: vw-150},500);
-		$('#b44').animate({top:240, left: vw-50},500);
-		$('#b55').animate({top:240, left: vw+50},500);
-		$('#b66').animate({top:240, left: vw+150},500);
-		$('#b77').animate({top:240, left: vw+250},500);
-		$('#b88').animate({top:240, left: vw+350},500);
-		$('#b99').animate({top:240, left: vw+450},500);
-		$('.balloons').css('opacity','0.9');
-		$('.balloons h2').fadeIn(3000);
-		$(this).fadeOut('slow').delay(3000).promise().done(function(){
-			$('#story').fadeIn('slow');
-		});
-	});
-	
-	$('#story').click(function(){
-		$(this).fadeOut('slow');
-		$('.cake').fadeOut('fast').promise().done(function(){
-			$('.message').fadeIn('slow');
-		});
-		
-		var i;
-
-		function msgLoop (i) {
-			$("p:nth-child("+i+")").fadeOut('slow').delay(800).promise().done(function(){
-			i=i+1;
-			$("p:nth-child("+i+")").fadeIn('slow').delay(1000);
-			if(i==50){
-				$("p:nth-child(49)").fadeOut('slow').promise().done(function () {
-					$('.cake').fadeIn('fast');
-				});
-				
-			}
-			else{
-				msgLoop(i);
-			}			
-
-		});
-			// body...
-		}
-		
-		msgLoop(0);
-		
-	});
+$(window).on('load', function() {
+    $('.loading').fadeOut('fast');
+    $('.container').fadeIn('fast');
 });
 
+$(document).ready(function() {
+    var vw;
 
+    // Debounce function for resize events
+    function debounce(func, wait) {
+        let timeout;
+        return function() {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, arguments), wait);
+        };
+    }
 
+    // Handle window resize with debouncing
+    $(window).on('resize', debounce(function() {
+        vw = $(window).width() / 2;
+        $('#b1, #b2, #b3, #b4, #b5, #b6, #b7, #b8, #b9').stop();
+        ['#b1', '#b2', '#b3', '#b4', '#b5', '#b6', '#b7', '#b8', '#b9'].forEach((id) => {
+            $(id).animate({ top: 240, left: vw + (id.slice(-1) - 1) * 100 }, 500);
+        });
+    }, 200));
 
-//alert('hello');
+    // Button click handlers
+    $('#turn_on').click(async function() {
+        await Promise.all([
+            $('#bulb_yellow').addClass('bulb-glow-yellow'),
+            $('#bulb_red').addClass('bulb-glow-red'),
+            $('#bulb_blue').addClass('bulb-glow-blue'),
+            $('#bulb_green').addClass('bulb-glow-green'),
+            $('#bulb_pink').addClass('bulb-glow-pink'),
+            $('#bulb_orange').addClass('bulb-glow-orange'),
+            $('body').addClass('pink')
+        ]);
+        $(this).fadeOut('slow').delay(5000).then(() => {
+            $('#play').fadeIn('slow');
+        });
+    });
+
+    $('#play').click(async function() {
+        const audio = $('.song')[0];
+        try {
+            await audio.play();
+        } catch (error) {
+            console.error('Audio playback failed:', error);
+            alert('Unable to play audio. Please check your browser settings.');
+        }
+        await Promise.all([
+            $('#bulb_yellow').addClass('bulb-glow-yellow-after'),
+            $('#bulb_red').addClass('bulb-glow-red-after'),
+            $('#bulb_blue').addClass('bulb-glow-blue-after'),
+            $('#bulb_green').addClass('bulb-glow-green-after'),
+            $('#bulb_pink').addClass('bulb-glow-pink-after'),
+            $('#bulb_orange').addClass('bulb-glow-orange-after'),
+            $('body').css('background-color', '#FFF').addClass('pink-after')
+        ]);
+        $(this).fadeOut('slow').delay(6000).then(() => {
+            $('#bannar_coming').fadeIn('slow');
+        });
+    });
+
+    // Balloon animations
+    const balloonIds = ['#b1', '#b2', '#b3', '#b4', '#b5', '#b6', '#b7', '#b8', '#b9'];
+    let isRunning = true;
+
+    function loopBalloon(id) {
+        if (!isRunning) return;
+        const randLeft = Math.random() * 1000;
+        const randTop = Math.random() * 500;
+        $(id).animate({ left: randLeft, bottom: randTop }, 10000, () => {
+            loopBalloon(id);
+        });
+    }
+
+    $('#balloons_flying').click(async function() {
+        $('.balloon-border').animate({ top: -500 }, 8000);
+        ['#b1', '#b4', '#b5', '#b7', '#b9'].forEach((id) => {
+            $(id).addClass('balloons-rotate-behaviour-one');
+        });
+        ['#b2', '#b3', '#b6', '#b8'].forEach((id) => {
+            $(id).addClass('balloons-rotate-behaviour-two');
+        });
+        balloonIds.forEach(loopBalloon);
+        $(this).fadeOut('slow').delay(5000).then(() => {
+            $('#cake_fadein').fadeIn('slow');
+        });
+    });
+
+    // Cake and message animations
+    $('#cake_fadein').click(async function() {
+        $('.cake').fadeIn('slow');
+        await $(this).fadeOut('slow').delay(3000);
+        $('#light_candle').fadeIn('slow');
+    });
+
+    $('#light_candle').click(async function() {
+        $('.fuego').fadeIn('slow');
+        await $(this).fadeOut('slow');
+        $('#wish_message').fadeIn('slow');
+    });
+
+    $('#wish_message').click(async function() {
+        vw = $(window).width() / 2;
+        balloonIds.forEach((id) => {
+            $(id).stop();
+            $(id).attr('id', `${id.slice(0, -1)}${parseInt(id.slice(-1)) + 10}`);
+        });
+        ['#b11', '#b22', '#b33', '#b44', '#b55', '#b66', '#b77', '#b88', '#b99'].forEach((id) => {
+            $(id).animate({ top: 240, left: vw + (id.slice(-2) - 1) * 100 }, 500);
+        });
+        $('.balloons').css('opacity', '0.9');
+        $('.balloons h2').fadeIn(3000);
+        await $(this).fadeOut('slow').delay(3000);
+        $('#story').fadeIn('slow');
+    });
+
+    $('#story').click(async function() {
+        await $(this).fadeOut('slow');
+        $('.cake').fadeOut('fast').then(() => {
+            $('.message').fadeIn('slow');
+        });
+
+        let i = 0;
+
+        async function msgLoop() {
+            if (i > 50) return;
+            await $("p:nth-child(" + i + ")").fadeOut('slow').delay(800);
+            i++;
+            await $("p:nth-child(" + i + ")").fadeIn('slow').delay(1000);
+            if (i === 50) {
+                await $("p:nth-child(49)").fadeOut('slow');
+                $('.cake').fadeIn('fast');
+            } else {
+                msgLoop();
+            }
+        }
+
+        msgLoop();
+    });
+});
