@@ -153,7 +153,7 @@ audio {
 /* Banner Styling */
 .bannar {
     max-width: 100%;
-    z-index: 99;
+    z-index: 999;
     transform: translate(0px, -500px);
 }
 
@@ -182,8 +182,8 @@ audio {
 .balloons {
     position: fixed;
     bottom: -200px;
-    opacity: 0.6;
-    z-index: 99;
+    opacity: 0.8;
+    z-index: 999;
     width: 100px;
     height: 183px;
     background-repeat: no-repeat;
@@ -268,7 +268,7 @@ audio {
 .balloon-border {
     position: fixed;
     top: 100%;
-    opacity: 0.6;
+    opacity: 0.9;
     z-index: 1;
 }
 
