@@ -152,7 +152,7 @@ audio {
 
 /* Banner Styling */
 .bannar {
-    max-width: 300%;
+    max-width: 100%;
     z-index: 9999;
     transform: translate(0px, -500px);
 }
@@ -284,7 +284,7 @@ audio {
 }
 
 .cake-cover {
-    margin-top: 0px;
+    margin-top: -10px;
 }
 
 .message {
